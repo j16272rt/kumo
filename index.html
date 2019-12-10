@@ -121,27 +121,33 @@
   <body>
     <!-- We must add the shoot-tomato component to the scene so it has an effect, as well as the physics component -->
     <a-scene
+ 
+      <!-- We can define assets here to be loaded when A-Frame initializes -->
+      <a-assets>
+        <!-- Credit to Poly by Google for the model: https://poly.google.com/view/dmzbb8UisNv -->
+        <a-asset-item id="tomatoModel" src="kumo3.glb"></a-asset-item>
+        <!-- Credit to Mike Koenig for the sound clip: http://soundbible.com/642-Splat.html -->
+        <a-asset-item preload="auto" class="a-sound" id="splatSrc" src="splat.m4a" response-type="arraybuffer"></a-asset-item>
+      </a-assets>
       xrweb
       shoot-tomato
       physics="iterations: 1"
       xrextras-almost-there
       xrextras-loading
       xrextras-runtime-error>
- 
-      <!-- We can define assets here to be loaded when A-Frame initializes -->
-      <a-assets>
-        <!-- Credit to Poly by Google for the model: https://poly.google.com/view/dmzbb8UisNv -->
-        <a-asset-item id="tomatoModel" src="kumo6.glb"></a-asset-item>
-        <!-- Credit to Mike Koenig for the sound clip: http://soundbible.com/642-Splat.html -->
-        <a-asset-item preload="auto" class="a-sound" id="splatSrc" src="splat.m4a" response-type="arraybuffer"></a-asset-item>
-      </a-assets>
- 
+      
       <a-camera
         id="camera"
         position="0 4 4">
         <a-sound id="splat" src="#splatSrc"></a-sound>
       </a-camera>
  
+        <!-- <a-entity gltf-model="kumo3.glb" animation-mixer="clip: *;"></a-entity> -->
+      <a-entity gltf-model="src: url(kumo3.glb);"
+              animation-mixer="loop: pingpong;"
+              position="-1.5 1 -4"
+              shadow="receive: true"></a-entity>
+
       <a-entity
         light="type: directional;
                intensity: 0.8;"
