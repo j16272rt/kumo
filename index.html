@@ -121,6 +121,12 @@
   <body>
     <!-- We must add the shoot-tomato component to the scene so it has an effect, as well as the physics component -->
     <a-scene
+      xrweb
+      shoot-tomato
+      physics="iterations: 1"
+      xrextras-almost-there
+      xrextras-loading
+      xrextras-runtime-error>
  
       <!-- We can define assets here to be loaded when A-Frame initializes -->
       <a-assets>
@@ -129,12 +135,6 @@
         <!-- Credit to Mike Koenig for the sound clip: http://soundbible.com/642-Splat.html -->
         <a-asset-item preload="auto" class="a-sound" id="splatSrc" src="splat.m4a" response-type="arraybuffer"></a-asset-item>
       </a-assets>
-      xrweb
-      shoot-tomato
-      physics="iterations: 1"
-      xrextras-almost-there
-      xrextras-loading
-      xrextras-runtime-error>
       
       <a-camera
         id="camera"
