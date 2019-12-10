@@ -141,7 +141,12 @@
         <a-sound id="splat" src="#splatSrc"></a-sound>
       </a-camera>
  
-        <a-entity gltf-model="kumo3.glb" animation-mixer="clip: *;"></a-entity>
+        <!-- <a-entity gltf-model="kumo3.glb" animation-mixer="clip: *;"></a-entity> -->
+      <a-entity gltf-model="src: url(kumo3.glb);"
+              animation-mixer="loop: pingpong;"
+              position="-1.5 1 -4"
+              shadow="receive: true"></a-entity>
+
       <a-entity
         light="type: directional;
                intensity: 0.8;"
